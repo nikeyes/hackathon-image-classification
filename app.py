@@ -1,43 +1,14 @@
-# https://github.com/DavidReveloLuna/APIDeep_Streamlit
-import os
-import shutil  # to save it locally
-import sys
-import urllib.request as urllib
-from io import BytesIO
-
 import mlflow
 import numpy as np
-import requests  # to get image from the web
 import streamlit as st
-# sys.path.insert(0, '.')
-# if os.environ.get('TF_KERAS'):
 from efficientnet.tfkeras import center_crop_and_resize, preprocess_input
 from PIL import Image
 from scipy import misc
 from skimage import io
 from tensorflow import keras
 
-print('tfkeras')
-# else:
-#    from efficientnet.keras import center_crop_and_resize, preprocess_input
-#
-#    print('keras')
-
 
 def get_model():
-    MLFLOW_TRACKING_URI = 'https://mlflow.spain-ml-dev-01.736618014913.cre.mpi-internal.com/'
-
-    # Setup de MLflow
-    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-
-    from mlflow.tracking import MlflowClient
-
-    client = MlflowClient()
-    if not os.path.exists('model_downloaded'):
-        print("DOWNLOAD FROM MLFLOW......")
-        os.mkdir('model_downloaded')
-        client.download_artifacts('c68d90e72d2f44708a51a187f7dc0d7e', 'model', 'model_downloaded')
-
     # logged_model = 'models:/efficientnetv2-s/24'
     # Load model as a PyFuncModel.
     model = mlflow.pyfunc.load_model('model_downloaded/model')
@@ -72,7 +43,7 @@ def main():
     else:
         model = st.session_state['model']
 
-    st.title("Clasificación de habitaciones")
+    st.title("Clasificador de habitaciones")
 
     col1, col2 = st.columns(2)
 
