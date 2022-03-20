@@ -5,7 +5,6 @@ import sys
 import urllib.request as urllib
 from io import BytesIO
 
-import matplotlib.pyplot as plt
 import mlflow
 import numpy as np
 import requests  # to get image from the web
