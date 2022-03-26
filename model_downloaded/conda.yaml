@@ -1,0 +1,19 @@
+channels:
+- conda-forge
+dependencies:
+- python=3.8.0
+- pip
+- pip:
+  - mlflow
+  - blinker==1.4
+  - boto3==1.21.24
+  - cryptography==36.0.1
+  - defusedxml==0.7.1
+  - google-api-python-client==1.12.11
+  - google-cloud-storage==1.44.0
+  - h5py<3.0.0
+  - kubernetes==18.20.0
+  - pandas==1.4.1
+  - pillow==9.0.1
+  - tensorflow==2.3.0
+name: mlflow-env
