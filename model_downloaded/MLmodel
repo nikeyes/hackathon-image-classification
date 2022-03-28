@@ -10,6 +10,6 @@ flavors:
     env: conda.yaml
     loader_module: mlflow.keras
     python_version: 3.8.0
-model_uuid: 0d98d4dd6b3244c29a1d8b82e6e64c91
-run_id: ad57d3ce1cd04f29a84be4c95858cb78
-utc_time_created: '2022-03-25 00:53:53.490715'
+model_uuid: 9d54dabfb094457696d328450f12ec54
+run_id: a422e99ae3734109afe14618c4f9e9ec
+utc_time_created: '2022-03-27 20:28:48.862639'
